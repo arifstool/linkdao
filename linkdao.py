@@ -3,7 +3,7 @@
 __author__ = "ARiF"
 __copyright__ = ""
 __license__ = "GPL"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __email__ = "arifsnoor@gmail.com"
 __status__ = ""
 
@@ -148,7 +148,7 @@ def arghandeler(argumets):
             if os.path.exists(out_file):
                 print(f"{out_file} already exists. Try using different name")
 
-        elif o in ("-x", "--domain-only"):
+        elif o in ("-x", "--domain-nly"):
             domain_only = True
 
         elif o in ("-v", "--verbose"):
@@ -162,9 +162,9 @@ def arghandeler(argumets):
         exit()
 
     if out_file == None:
-        out_file = f"urls-of-{inp_file}"
+        out_file = inp_file+"-urls"
         n = 0
-        while os.path.exists(out_file+".txt"):
+        while os.path.exists(f"{out_file}.txt"):
             out_file += f"({n+1})"
         out_file += ".txt"
 
