@@ -7,15 +7,9 @@ __version__ = "1.0.2"
 __email__ = "arifsnoor@gmail.com"
 __status__ = ""
 
-from distutils import text_file
-from distutils.text_file import TextFile
-import re
+import re, getopt
 import sys
-import getopt
 import os
-from tabnanny import verbose
-from turtle import isvisible
-
 
 def uses():
     print(''' 
@@ -66,7 +60,7 @@ def domainextractor(domain):
 
 
 def linkdao(inp_file, out_file, domain_provided, domain, domain_only, isverbose):
-    if verbose:
+    if isverbose:
         print("Loading file")
     txt_file = open(inp_file)
     text = txt_file.read()
